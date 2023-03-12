@@ -1,0 +1,10 @@
+{
+   "version": 2,
+   "name": "x-bogus",
+   "builds": [
+      { "src": "main.js", "use": "@vercel/node" }
+   ],
+   "routes": [
+      { "src": "/x-bogus", "dest": "/main.js" }
+   ]
+}
