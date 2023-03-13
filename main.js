@@ -27,7 +27,7 @@ app.get('/x-bogus', (req, res) => {
     res.json(getXBogus(query,userAgent))
 })
 app.get('/', (req,res) =>{
-    res.send("请访问/x-bogus, params= {'query':'queryStr', 'useragent': 'useragent'}")
+    res.send("请访问/x-bogus, params= {'query':'queryStr', 'user-agent': 'useragent'}")
 } )
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}/x-bogus/`)
