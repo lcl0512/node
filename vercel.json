@@ -7,6 +7,6 @@
    "trailingSlash": true,
    "rewrites": [
       { "source": "/x-bogus/", "destination": "/main.js" },
-      { "source": "/*", "destination": "/main.js" }
+      { "source": "/", "destination": "/main.js" }
    ]
 }
