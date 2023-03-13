@@ -1,4 +1,4 @@
-const { sign } = require("./X-Bogus.js");
+const { sign } = require("./X-Bogus.min.js");
 const express = require('express')
 
 const app = express()
@@ -18,10 +18,17 @@ function getXBogus(query, userAgent){
 app.get('/x-bogus', (req, res) => {
     const query = req.query['query']
     const userAgent = req.query['user-agent']
+    if (!query || !userAgent){
+        res.sendStatus(400)
+        res.send({'error': "参数错误"})
+    }
+
     // console.log(req.query);
     res.json(getXBogus(query,userAgent))
 })
-
+app.get('/', (req,res) =>{
+    res.send("请访问/x-bogus, params= {'query':'queryStr', 'useragent': 'useragent'}")
+} )
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}/x-bogus/`)
 })
