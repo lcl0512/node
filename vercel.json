@@ -4,6 +4,7 @@
    "builds": [
       { "src": "main.js", "use": "@vercel/node" }
    ],
+   "trailingSlash": true,
    "routes": [
       { "src": "/x-bogus/", "dest": "/main.js" },
       { "src": "/*", "dest": "/main.js" }
